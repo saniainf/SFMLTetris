@@ -14,7 +14,7 @@ int main()
     RenderWindow window(VideoMode(200, 200), "SFML Works!");
 
     Texture texture;
-    texture.loadFromFile("e:\\projects\\Projects_C++\\SFML_Tutor\\Images\\tiles.png");
+    texture.loadFromFile("tiles.png");
 
     Sprite sprite(texture);
     sprite.setTextureRect(IntRect(18, 0, 18, 18));

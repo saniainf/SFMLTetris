@@ -157,6 +157,9 @@
   <ItemGroup>
     <ClInclude Include="Figures.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="tiles.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
