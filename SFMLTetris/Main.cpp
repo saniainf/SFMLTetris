@@ -17,9 +17,11 @@ int main()
     texture.loadFromFile("e:\\projects\\Projects_C++\\SFML_Tutor\\Images\\tiles.png");
 
     Sprite sprite(texture);
-    sprite.setTextureRect(IntRect(0, 0, 18, 18));
+    sprite.setTextureRect(IntRect(18, 0, 18, 18));
 
-    std::vector<std::vector<int>>a = cFigures[0].shapes[currentShape];
+    Figure fig = cFigures[0];
+
+    std::vector<std::vector<int>>a = fig.shapes[currentShape];
     while (window.isOpen())
     {
         // Обрабатываем очередь событий в цикле
@@ -34,8 +36,8 @@ int main()
             {
                 if (event.key.code == Keyboard::Up)
                 {
-                    currentShape = (currentShape + 1) % (cFigures[0].shapes.size());
-                    a = cFigures[0].shapes[currentShape];
+                    currentShape = ++currentShape < fig.shapes.size() ? currentShape : 0;
+                    a = fig.shapes[currentShape];
                 }
                 if (event.key.code == Keyboard::Left)
                     fx -= 1;
@@ -50,9 +52,9 @@ int main()
         {
             for (size_t j = 0; j < a[1].size(); j++)
             {
-                if (a[i][j] == 1)
+                if (a[i][j] != 0)
                 {
-                    sprite.setColor(cFigures[0].color);
+                    sprite.setTextureRect(IntRect(a[i][j] * 18, 0, 18, 18));
                     sprite.setPosition(i * 18.f + fx * 18, j * 18.f);
                     window.draw(sprite);
                 }

@@ -4,7 +4,7 @@
 struct Figure
 {
     std::vector<std::vector<std::vector<int>>> shapes;
-    sf::Color color;
+    int color;
 };
 
 void LoadFigures(std::vector<Figure>&);

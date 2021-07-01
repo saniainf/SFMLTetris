@@ -9,15 +9,15 @@ void LoadFigures(std::vector<Figure>& figures)
     {
         {
             {{0,1,0,0},
-             {0,1,0,0},
-             {0,1,0,0},
-             {0,1,0,0}},
+             {0,2,0,0},
+             {0,3,0,0},
+             {0,4,0,0}},
             {{0,0,0,0},
-             {1,1,1,1},
+             {1,2,3,4},
              {0,0,0,0},
              {0,0,0,0}}
         },
-        sf::Color(255,0,0)
+        1
     };
     figures.push_back(figI);
 
@@ -29,7 +29,7 @@ void LoadFigures(std::vector<Figure>& figures)
              {0,0,0,0},
              {0,0,0,0}}
         },
-        sf::Color(0,255,0)
+        3
     };
     figures.push_back(figO);
 
