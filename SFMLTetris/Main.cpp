@@ -6,8 +6,8 @@ using namespace sf;
 
 int main()
 {
-    std::vector<Figure> cFigures;
-    LoadFigures(cFigures);
+    Figure cFigures[8];
+    int figureCount = LoadFigures(cFigures);
     int currentShape = 0;
     int fx = 0, fy = 0;
 
@@ -21,7 +21,17 @@ int main()
 
     Figure fig = cFigures[0];
 
-    std::vector<std::vector<int>>a = fig.shapes[currentShape];
+    int(*a)[4][4] = &fig.shapes[currentShape];
+
+    //for (size_t i = 0; i < 4; i++)
+    //{
+    //    for (size_t j = 0; j < 4; j++)
+    //    {
+    //        std::cout << (*a)[i][j] << " ";
+    //    }
+    //    std::cout << "\n";
+    //}
+
     while (window.isOpen())
     {
         // Обрабатываем очередь событий в цикле
@@ -36,8 +46,8 @@ int main()
             {
                 if (event.key.code == Keyboard::Up)
                 {
-                    currentShape = ++currentShape < fig.shapes.size() ? currentShape : 0;
-                    a = fig.shapes[currentShape];
+                    currentShape = ++currentShape < fig.shapeCount ? currentShape : 0;
+                    a = &fig.shapes[currentShape];
                 }
                 if (event.key.code == Keyboard::Left)
                     fx -= 1;
@@ -48,20 +58,20 @@ int main()
 
         window.clear(Color::White);
 
-        for (size_t i = 0; i < a[0].size(); i++)
+        for (size_t i = 0; i < 4; i++)
         {
-            for (size_t j = 0; j < a[1].size(); j++)
+            for (size_t j = 0; j < 4; j++)
             {
-                if (a[i][j] != 0)
+                if ((*a)[i][j] != 0)
                 {
-                    sprite.setTextureRect(IntRect(a[i][j] * 18, 0, 18, 18));
+                    sprite.setTextureRect(IntRect((*a)[i][j] * 18, 0, 18, 18));
                     sprite.setPosition(i * 18.f + fx * 18, j * 18.f);
                     window.draw(sprite);
                 }
             }
         }
 
-        // Отрисовка окна	
+        // Отрисовка окна
         window.display();
     }
 

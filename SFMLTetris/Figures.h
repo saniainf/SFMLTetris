@@ -3,10 +3,10 @@
 
 struct Figure
 {
-    std::vector<std::vector<std::vector<int>>> shapes;
-    int color;
+    int shapes[4][4][4];
+    int shapeCount;
 };
 
-void LoadFigures(std::vector<Figure>&);
+int LoadFigures(Figure *figures);
 
 #endif

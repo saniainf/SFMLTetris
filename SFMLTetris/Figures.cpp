@@ -3,23 +3,23 @@
 #include"Figures.h"
 
 
-void LoadFigures(std::vector<Figure>& figures)
+int LoadFigures(Figure *figures)
 {
     Figure figI =
     {
         {
             {{0,1,0,0},
              {0,2,0,0},
-             {0,3,0,0},
+             {0,3,0,3},
              {0,4,0,0}},
             {{0,0,0,0},
              {1,2,3,4},
              {0,0,0,0},
              {0,0,0,0}}
         },
-        1
+        2
     };
-    figures.push_back(figI);
+    figures[0] = figI;
 
     Figure figO =
     {
@@ -29,8 +29,9 @@ void LoadFigures(std::vector<Figure>& figures)
              {0,0,0,0},
              {0,0,0,0}}
         },
-        3
+        1
     };
-    figures.push_back(figO);
+    figures[1]= figO;
 
+    return 2;
 }
