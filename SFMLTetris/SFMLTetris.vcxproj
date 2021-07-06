@@ -152,12 +152,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Figures.cpp" />
+    <ClCompile Include="Services.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figures.h" />
+    <ClInclude Include="Services.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="background.png" />
     <Image Include="tiles.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -21,14 +21,23 @@
     <ClCompile Include="Figures.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Services.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figures.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Services.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="tiles.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="background.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>
