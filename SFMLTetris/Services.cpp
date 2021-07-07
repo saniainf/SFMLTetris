@@ -10,7 +10,7 @@ void Initialization(Prefs& prefs)
     prefs.fallTick = { 0.3 };
     prefs.drawOffset = { 27,31 };
     prefs.boardSize = { 10,20 };
-
+    
     prefs.figureTexture.loadFromFile("tiles.png");
     prefs.shapeSprite.setTexture(prefs.figureTexture);
     prefs.shapeSprite.setTextureRect(sf::IntRect(18, 0, 18, 18));
